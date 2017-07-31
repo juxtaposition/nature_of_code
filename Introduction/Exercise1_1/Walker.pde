@@ -25,9 +25,9 @@ class Walker {
     // A 40% of moving to the right!
     if (r < 0.4) {    
       x++;
-    } else if (r < 0.5) {
+    } else if (r < 0.4) {
       x--;
-    } else if (r < 0.9) {
+    } else if (r < 0.8) {
       y++;
     } else {
       y--;
@@ -36,19 +36,4 @@ class Walker {
     x = constrain(x,0,width-1);
     y = constrain(y,0,height-1);
   }
-}
-
-Walker w;
-
-void setup() {
-  size(640,360);
-  // Create a walker object
-  w = new Walker();
-  background(255);
-}
-
-void draw() {
-  // Run the walker object
-  w.step();
-  w.render();
 }
